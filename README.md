@@ -1,4 +1,4 @@
-# order-management
+# Order Management
 
 This has been written in PHP 7.3 and using MySQL 5.7 as the database.
 
