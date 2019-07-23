@@ -1,5 +1,7 @@
 # order-management
 
+This has been written in PHP 7.3 and using MySQL 5.7 as the database.
+
 First of all create the Schema and tables to be used: 
 
 `CREATE SCHEMA 'order_management';`
@@ -7,6 +9,7 @@ First of all create the Schema and tables to be used:
 Clients Table:
 `CREATE TABLE 'order_management'.'clients' (
   'clients_id' INT NOT NULL AUTO_INCREMENT,
+  'client_name' VARCHAR(50),
   'first_name' VARCHAR(50) NOT NULL,
   'last_name' VARCHAR(50) NOT NULL,
   PRIMARY KEY ('clients_id'));`
