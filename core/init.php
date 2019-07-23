@@ -4,9 +4,9 @@ session_start();
 $GLOBALS['config'] = array(
     'mysql' => array(
         'host' => '127.0.0.1',
-        'username' => 'brendan',
-        'password' => '',
         'db' => 'order_management',
+        'user' => 'brendan',
+        'password' => '',
     ),
     'session' => array(
         'session_name' => 'user',
@@ -15,7 +15,5 @@ $GLOBALS['config'] = array(
 );
 
 spl_autoload_register(function ($class) {
-    return 'classes/' . $class . '.php';
+    require_once 'classes/' . $class . '.php';
 });
-
-require_once 'functions/sanitize.php';
