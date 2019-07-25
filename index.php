@@ -9,11 +9,11 @@ require_once 'core/init.php';
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Order Management</title>
-    <?php include_once 'icons.php'; ?>
+    <?php include 'icons.php'; ?>
 </head>
 <body>
-    <?php include_once 'header.php'; ?>
+    <?php include 'header.php'; ?>
 
-    <?php include_once 'footer.php'; ?>
+    <?php include 'footer.php'; ?>
 </body>
 </html>
