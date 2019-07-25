@@ -16,11 +16,41 @@ $products = DB::getInstance()->query('SELECT * FROM products;');
 <?php include 'header.php'; ?>
 <div class="ui container">
     <h1>Products</h1>
-    <div class="ui column">
-        <?php foreach ($products->results() as $product) {
-            echo $product->product_name . "<br>";
+    <table class="ui large table">
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($products->results() as $product) {
+            echo "<tr>
+                        <td>" . $product->product_name . "</td>
+                        <td>" . $product->description . "</td>
+                        <td>
+                        <a href='delete-product.php?id=".$product->products_id."'>
+                        <button class=\"ui icon negative button\">
+                            <i class=\"trash icon\"></i>
+                        </button></a>
+                        </td>
+                      </tr>";
         } ?>
-    </div>
+        </tbody>
+        <tfoot>
+        <tr>
+            <th><?php echo $products->count(); ?> Products</th>
+            <th></th>
+            <th>
+                <a href="create-product.php">
+                    <button class="ui button right-aligned">Create Product</button>
+                </a>
+            </th>
+        </tr>
+        </tfoot>
+    </table>
 </div>
 <?php include 'footer.php'; ?>
 </body>
