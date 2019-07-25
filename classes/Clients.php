@@ -1,6 +1,6 @@
 <?php
 
-class Orders
+class Clients
 {
     private $_db,
         $_data;
@@ -16,7 +16,7 @@ class Orders
      */
     public function create($fields)
     {
-        if (!$this->_db->insert('orders', $fields)) {
+        if (!$this->_db->insert('clients', $fields)) {
             throw new Exception('There was a problem.');
         }
     }
@@ -29,7 +29,7 @@ class Orders
      */
     public function update($fields = array(), $id = null)
     {
-        if (!$this->_db->update('orders', $id, $fields)) {
+        if (!$this->_db->update('clients', $id, $fields)) {
             throw new Exception('There was a problem updating');
         }
     }
@@ -39,7 +39,7 @@ class Orders
      */
     public function delete($id)
     {
-        $this->_db->delete('orders', array('orders_id', '=', $id));
+        $this->_db->delete('clients', array('clients_id', '=', $id));
     }
 
     /**
