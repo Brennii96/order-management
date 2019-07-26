@@ -1,4 +1,4 @@
 <?php
 require_once 'core/init.php';
 
-var_dump("test");
+return DB::getInstance("SELECT * FROM clients WHERE client_name LIKE '%".Input::get('clientname')."%'")->results();

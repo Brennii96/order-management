@@ -91,7 +91,7 @@ if (Input::exists()) {
         </div>
         <div class="ui field">
             <label for="client">Client</label>
-            <select name="client" id="client" class="label ui selection fluid dropdown" >
+            <select name="client" id="client" class="label ui selection fluid dropdown">
                 <option value="">Select Client</option>
                 <?php foreach (DB::getInstance()->query('SELECT * FROM clients;')->results() as $client) {
                     echo "<option value='".$client->clients_id."'>".$client->client_name."</option>";

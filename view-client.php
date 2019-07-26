@@ -42,7 +42,7 @@ $client = $clients->find(Input::get('id'))->results();
             <th></th>
             <th></th>
             <th>
-                <a href="create-order.php">
+                <a href="products-to-order.php?id=<?php echo $client[0]->clients_id; ?>">
                     <button class="ui button right-aligned">Create Order</button>
                 </a>
             </th>
