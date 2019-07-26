@@ -51,6 +51,11 @@ $clients = DB::getInstance()->query("SELECT * FROM clients;");
                         <button class=\"ui icon negative button\">
                             <i class=\"trash icon\"></i>
                         </button></a>
+                        <a href='view-client.php?id=".$client->clients_id."'>
+                        <button class=\"ui icon button\">
+                            <i class=\"eye icon\"></i>
+                        </button>
+                        </a>
                         </td>
                       </tr>";
             } ?>

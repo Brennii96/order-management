@@ -5,7 +5,7 @@ class Orders
     private $_db,
         $_data;
 
-    public function __construct($client = null)
+    public function __construct($orders = null)
     {
         $this->_db = DB::getInstance();
     }

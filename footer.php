@@ -1,1 +1,16 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha256-t8GepnyPmw9t+foMh3mKNvcorqNHamSKtKRxxpUEgFI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+<script>
+    $.fn.api.settings.api.search = '/search,php/?id={value}';
+    $('#full-search').api({
+            action : 'search',
+            method : 'POST',
+            urlData: {
+                id: this.value
+            },
+            // passed via POST
+            data: {
+                id: this.value
+            }
+        });
+</script>

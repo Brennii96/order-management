@@ -16,7 +16,7 @@
             <div class="ui input">
                 <form action="post" class="ui icon input">
                     <i class="search icon"></i>
-                    <input type="text" placeholder="Search...">
+                    <input type="text" id="full-search" placeholder="Search...">
                 </form>
             </div>
         </div>
