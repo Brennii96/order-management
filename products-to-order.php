@@ -42,13 +42,8 @@ if (Input::exists()) {
         ));
         if ($validation->passed()) {
             try {
-                $orders->create(array(
-                    'status' => Input::get('status'),
-                    'payment_method' => Input::get('payment_method'),
-                    'date_time' => $date->format('Y-m-d H:i:s'),
-                    'description' => Input::get('order_description')
-                ));
                 $productsToOrder->create(array(
+                    'orders_id' => Input::get('orders_id'),
                     'clients_id' => Input::get('client'),
                     'orders_id' => 2,
                     'products_id' => Input::get('products'),
@@ -80,6 +75,15 @@ if (Input::exists()) {
 <?php include 'header.php'; ?>
 <div class="ui container">
     <form method="post" class="form ui">
+        <div class="ui field">
+            <label for="orders_id">Order ID</label>
+            <select name="orders_id" id="orders_id" class="ui dropdown fluid search" multiple="">
+                <option value="">Select Order ID</option>
+                <?php foreach (DB::getInstance()->query('SELECT * FROM orders;')->results() as $order) {
+                    echo "<option value='".$order->orders_id ."'>" . $orders->status . "</option>";
+                } ?>
+            </select>
+        </div>
         <div class="ui field">
             <label for="products">Products</label>
             <select name="products" id="products" class="ui dropdown fluid search" multiple="">
@@ -132,6 +136,7 @@ if (Input::exists()) {
 <?php include 'footer.php'; ?>
 <script>
     $('#client').dropdown();
+    $('#orders_id').dropdown();
     $('#products').dropdown();
 </script>
 </body>
