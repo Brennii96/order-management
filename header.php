@@ -20,7 +20,7 @@
 <!--            </div>-->
             <div class="ui search">
                 <div class="ui icon input">
-                    <input id="full-search" class="prompt" type="text" placeholder="Search countries...">
+                    <input id="full-search" class="prompt" type="text" placeholder="Search clients...">
                     <i class="search icon"></i>
                 </div>
                 <div class="results"></div>
