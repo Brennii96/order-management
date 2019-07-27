@@ -2,6 +2,8 @@
 
 This has been written in PHP 7.3 and using MySQL 5.7 as the database.
 
+Using Semantic UI because it's easy to use and looks quite nice. I can also make use of the javascript api when I implement the search bar.
+
 Add your database credentials to the array in `core/init.php`;
 
 First of all create the Schema and tables to be used: 
