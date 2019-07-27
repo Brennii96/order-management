@@ -13,11 +13,17 @@
             <i class="mail icon"></i> Clients
         </a>
         <div class="right item">
-            <div class="ui input">
-                <form action="post" class="ui icon input">
+<!--            <div class="ui input">-->
+<!--                <i class="search icon"></i>-->
+<!--                <input type="text" id="full-search" placeholder="Search...">-->
+<!--                <div class="results"></div>-->
+<!--            </div>-->
+            <div class="ui search">
+                <div class="ui icon input">
+                    <input id="full-search" class="prompt" type="text" placeholder="Search countries...">
                     <i class="search icon"></i>
-                    <input type="text" id="full-search" placeholder="Search...">
-                </form>
+                </div>
+                <div class="results"></div>
             </div>
         </div>
     </div>

@@ -9,8 +9,8 @@ $products = DB::getInstance()->query('SELECT * FROM products;');
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include 'icons.php'; ?>
-    <title>Document</title>
+    <?php include_once 'icons.php'; ?>
+    <title>Products </title>
 </head>
 <body>
 <?php include 'header.php'; ?>

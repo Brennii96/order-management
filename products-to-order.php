@@ -68,11 +68,11 @@ if (Input::exists()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include 'icons.php'; ?>
+    <?php include_once 'icons.php'; ?>
     <title>Create Order | Order Management</title>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<?php include_once 'header.php'; ?>
 <div class="ui container">
     <form method="post" class="form ui">
         <div class="ui field">
@@ -133,7 +133,7 @@ if (Input::exists()) {
     </form>
 </div>
 
-<?php include 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>
 <script>
     $('#client').dropdown();
     $('#orders_id').dropdown();
