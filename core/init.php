@@ -11,6 +11,10 @@ $GLOBALS['config'] = array(
     'session' => array(
         'session_name' => 'user',
         'token_name' => 'csrf',
+    ),
+    'cache' => array(
+        'location' => 'cache',
+        'expiry' => 3600
     )
 );
 
