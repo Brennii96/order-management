@@ -135,7 +135,6 @@ if (Input::exists()) {
 
 <?php include 'footer.php'; ?>
 <script>
-    $('#client').dropdown();
     $('#orders_id').dropdown();
     $('#products').dropdown();
 </script>

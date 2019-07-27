@@ -19,6 +19,7 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
     <table class="ui large table">
         <thead>
         <tr>
+            <th>Order Number</th>
             <th>Order Status</th>
             <th>Payment Method</th>
             <th>Date / Time</th>
@@ -31,6 +32,7 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
         foreach ($orders->results() as $order) {
             $date = new DateTime( $order->date_time);
             echo "<tr>
+                        <td>" . $order->orders_id . "</td>
                         <td>" . $order->status . "</td>
                         <td>" . $order->payment_method. "</td>
                         <td>" . $date->format('d F Y, h:i:s A') . "</td>
@@ -47,6 +49,7 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
         <tfoot>
         <tr>
             <th><?php echo $orders->count(); ?> Orders</th>
+            <th></th>
             <th></th>
             <th></th>
             <th></th>

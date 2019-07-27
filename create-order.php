@@ -3,7 +3,7 @@ require_once 'core/init.php';
 $orders = new Orders();
 if (Input::exists()) {
     if (Token::check(Input::get('token'))) {
-        $validate= new Validate();
+        $validate = new Validate();
         $validation = $validate->check($_POST, array(
             'order_status' => array(
                 'name' => 'Order Status',
@@ -41,9 +41,11 @@ if (Input::exists()) {
             } catch (Exception $e) {
                 die($e->getMessage());
             }
-
-            Session::flash('success', 'Order has successfully been created');
-            Redirect::to('orders.php');
+            Session::put('status', Input::get('order_status'));
+            Session::put('payment_method', Input::get('payment_method'));
+            Session::put('date_time', Input::get('date_time'));
+            Session::put('description', Input::get('description'));
+            Redirect::to('attach-client-product.php');
         }
     }
 }
@@ -54,11 +56,11 @@ if (Input::exists()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include 'icons.php'; ?>
+    <?php include_once 'icons.php'; ?>
     <title>Create Order | Order Management</title>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<?php include_once 'header.php'; ?>
 <div class="ui container">
 <form method="post" class="form ui">
     <div class="ui field">
@@ -83,5 +85,6 @@ if (Input::exists()) {
     </div>
 </form>
 </div>
+<?php include_once 'footer.php'; ?>
 </body>
 </html>
