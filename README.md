@@ -6,7 +6,7 @@ Using Semantic UI because it's easy to use and looks quite nice. I can also make
 
 Add your database credentials to the array in `core/init.php`;
 
-First of all create the Schema and tables to be used: 
+You can either create the schema and import Products and Clients I used in testing from the `orderManagement.sql` file. Or use the queries below to create the schema and tables and start fresh. 
 
 `CREATE SCHEMA 'order_management';`
 
