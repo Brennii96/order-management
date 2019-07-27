@@ -1,8 +1,6 @@
 <?php
 require_once 'core/init.php';
 $clients = new Clients();
-//$orders = new Orders();
-
 $client = $clients->find(Input::get('id'))->results();
 ?>
 <!doctype html>
@@ -11,11 +9,11 @@ $client = $clients->find(Input::get('id'))->results();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <?php include 'icons.php'; ?>
+    <?php include_once 'icons.php'; ?>
     <title><?php echo $client[0]->client_name; ?> | Order Management</title>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<?php include_once 'header.php'; ?>
 <div class="ui container">
     <table class="ui large table">
         <thead>
@@ -32,7 +30,11 @@ $client = $clients->find(Input::get('id'))->results();
             <td><?php echo $client[0]->first_name; ?></td>
             <td><?php echo $client[0]->last_name; ?></td>
             <td>
-
+                <a href="view-order.php?id=<?php echo $client[0]->clients_id; ?>">
+                    <button class="ui icon button">
+                        <i class="eye icon"></i>
+                    </button>
+                </a>
             </td>
         </tr>
         </tbody>
@@ -50,5 +52,6 @@ $client = $clients->find(Input::get('id'))->results();
         </tfoot>
     </table>
 </div>
+<?php include_once 'footer.php'; ?>
 </body>
 </html>

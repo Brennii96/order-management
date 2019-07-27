@@ -1,4 +1,4 @@
-<div class="ui attached stackable menu">
+<div class="ui attached stackable menu spacing-bottom">
     <div class="ui container">
         <a class="item" href="/">
             <i class="home icon"></i> Home

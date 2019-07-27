@@ -74,5 +74,6 @@ $clients = DB::getInstance()->query("SELECT * FROM clients;");
         </tfoot>
     </table>
 </div>
+<?php include_once 'footer.php'; ?>
 </body>
 </html>
