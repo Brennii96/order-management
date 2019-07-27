@@ -1,5 +1,6 @@
 <?php
 require_once 'core/init.php';
+//include_once 'functions/cache.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,24 +15,31 @@ require_once 'core/init.php';
     <?php include 'header.php'; ?>
     <div class="ui container four">
         <div class="ui column">
-            <div class="ui circular segment">
-                <h2 class="ui header">
-                    <?php echo DB::getInstance()->query("SELECT * FROM products;")->count(); ?> Products Available
-                </h2>
-            </div>
-            <div class="ui circular segment">
-                <h2 class="ui header">
-                    <?php echo DB::getInstance()->query("SELECT * FROM orders")->count(); ?> Orders
-                </h2>
-            </div>
-            <div class="ui circular segment">
-                <h2 class="ui header">
-                    <?php echo DB::getInstance()->query("SELECT * FROM clients;")->count(); ?> Clients
-                </h2>
-            </div>
+            <a href="products.php">
+                <div class="ui circular segment">
+                    <h2 class="ui header">
+                        <?php echo DB::getInstance()->query("SELECT * FROM products;")->count(); ?> Products Available
+                    </h2>
+                </div>
+            </a>
+            <a href="orders.php">
+                <div class="ui circular segment">
+                    <h2 class="ui header">
+                        <?php echo DB::getInstance()->query("SELECT * FROM orders")->count(); ?> Orders
+                    </h2>
+                </div>
+            </a>
+            <a href="clients.php">
+                <div class="ui circular segment">
+                    <h2 class="ui header">
+                        <?php echo DB::getInstance()->query("SELECT * FROM clients;")->count(); ?> Clients
+                    </h2>
+                </div>
+            </a>
         </div>
 
     </div>
     <?php include 'footer.php'; ?>
+    <?php //include_once 'functions/cache_footer.php'; ?>
 </body>
 </html>
