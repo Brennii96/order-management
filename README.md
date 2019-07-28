@@ -44,3 +44,19 @@ Products to order table:
   'postage' VARCHAR(45) NOT NULL,
   'despatch_date' DATETIME NOT NULL,
   PRIMARY KEY ('products_to_order_id'));`
+
+
+Routes: 
+index.php                  => Home page,
+orders.php                 => Orders Page
+create-order.php           => Create Order Page (simply adds row to orders table)
+delete-order.php?id=?      => Delete the order associated with the ID passed in the URL
+products.php               => Displays all products (pagination needs adding)
+create-product.php         => Creates product
+delete-product.php?id=?    => Deletes the product associated with the ID passed in the URL.
+clients.php                => List of all available Clients.
+create-client.php          => Create a client
+view-client.php?id=?       => Displays information for client associated with the ID passed in the URL.
+view-order.php?id=?        => Displays all orders for the Client with the ID passed from the URL.
+products-to-order.php?id=? => Adds record to products_to_order table for the client's id passed through the URL (doesn't work correctly yet.
+update-order.php?id=?      => Updates the order associated with the id passed through the URL (not working yet).
