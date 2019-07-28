@@ -47,7 +47,7 @@ Products to order table:
 
 
 Routes: 
-index.php                  => Home page,
+index.php                  => Home page,<br>
 orders.php                 => Orders Page
 create-order.php           => Create Order Page (simply adds row to orders table)
 delete-order.php?id=?      => Delete the order associated with the ID passed in the URL
