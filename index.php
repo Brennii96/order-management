@@ -62,7 +62,7 @@ require_once 'core/init.php';
                         <td class='error'>".$date->format('d F Y')."</td>                       
                         <td>".$despatch->description."</td>                       
                         <td class='center aligned'>
-                            <a class='ui button' href='update-order.php?id=$despatch->orders_id'>Update Status</a>
+                            <a class='ui button' href='update-order.php?id=$despatch->orders_id'>Update</a>
                         </td>                       
                       </tr>";
             } ?>
