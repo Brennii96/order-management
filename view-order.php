@@ -14,7 +14,7 @@ require_once 'core/init.php';
 <?php include_once 'header.php'; ?>
 <div class="ui container">
     <h2><?php echo DB::getInstance()->query("SELECT client_name FROM clients WHERE clients_id = " . Input::get('id') ."")->results()[0]->client_name; ?>'s Orders</h2>
-    <?php if (DB::getInstance()->query("SELECT * FROM orders JOIN products_to_order ON orders.orders_id = products_to_order.orders_id;")->results()[0]->clients_id == Input::get('id')) { ?>
+    <?php if (DB::getInstance()->query("SELECT * FROM products_to_order WHERE clients_id = " . Input::get('id'))->count() == 0) { ?>
         <h3>No orders have been placed.</h3>
     <?php } else { ?>
     <table class="ui large table">
@@ -33,7 +33,7 @@ require_once 'core/init.php';
         </thead>
         <tbody>
         <?php
-        foreach (DB::getInstance()->query("SELECT * FROM orders JOIN products_to_order ON orders.orders_id = products_to_order.orders_id;")->results() as $order) {
+        foreach (DB::getInstance()->query("SELECT * FROM orders JOIN products_to_order ON orders.orders_id = products_to_order.orders_id AND products_to_order.clients_id = ". Input::get('id') .";")->results() as $order) {
             $despatchDate = new DateTime($order->despatch_date);
             $dateTime = new DateTime($order->date_time);
             echo "<tr>
@@ -41,8 +41,8 @@ require_once 'core/init.php';
                         <td>" . $order->payment_method . "</td>
                         <td>" . $order->status . "</td>
                         <td>" . DB::getInstance()->get('products', array('products_id', '=', $order->products_id))->results()[0]->product_name . "</td>
-                        <td>" . $order->price . "</td>
-                        <td>" . $order->postage . "</td>
+                        <td class='prices'>" . $order->price . "</td>
+                        <td class='postage'>" . $order->postage . "</td>
                         <td>" . $despatchDate->format('d F Y, h:i A')  . "</td>
                         <td>" . $dateTime->format('d F Y, h:i A') . "</td>
                         <td>
@@ -70,7 +70,7 @@ require_once 'core/init.php';
             <th></th>
             <th></th>
             <th></th>
-            <th></th>
+            <th>Total: <div id="totals"></div></th>
             <th>
                 <a href="create-client.php">
                     <button class="ui button right-aligned">Create Client</button>
@@ -81,5 +81,23 @@ require_once 'core/init.php';
     </table>
     <?php } ?>
 </div>
+<?php include_once 'footer.php'; ?>
+<script>
+    var result = [];
+    $('table tr').each(function(){
+        $('.prices', this).each(function(index, val){
+            if(!result[index]) result[index] = 0;
+            result[index] += parseInt($(val).text());
+        });
+        $('.postage', this).each(function(index, val){
+            if(!result[index]) result[index] = 0;
+            result[index] += parseInt($(val).text());
+        });
+    });
+
+    $(result).each(function(){
+        $('#totals').text(parseInt(this).toFixed(2));
+    });
+</script>
 </body>
 </html>

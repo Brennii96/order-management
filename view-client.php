@@ -21,7 +21,7 @@ $client = $clients->find(Input::get('id'))->results();
             <th>Client Name</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Actions</th>
+            <th class="center aligned">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -29,7 +29,7 @@ $client = $clients->find(Input::get('id'))->results();
             <td><?php echo $client[0]->client_name; ?></td>
             <td><?php echo $client[0]->first_name; ?></td>
             <td><?php echo $client[0]->last_name; ?></td>
-            <td>
+            <td class="center aligned">
                 <a href="view-order.php?id=<?php echo $client[0]->clients_id; ?>">
                     <button class="ui icon button">
                         <i class="eye icon"></i>
@@ -43,7 +43,7 @@ $client = $clients->find(Input::get('id'))->results();
             <th>Orders</th>
             <th></th>
             <th></th>
-            <th>
+            <th class="center aligned">
                 <a href="products-to-order.php?id=<?php echo $client[0]->clients_id; ?>">
                     <button class="ui button right-aligned">Create Order</button>
                 </a>

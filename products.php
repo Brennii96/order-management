@@ -13,9 +13,9 @@ $products = DB::getInstance()->query('SELECT * FROM products;');
     <title>Products </title>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<?php include_once 'header.php'; ?>
 <div class="ui container">
-    <h1>Products</h1>
+    <h1>Products</h1><em>The Delete button only deletes the product and not the orders associated with the product</em>
     <table class="ui large table">
         <thead>
         <tr>
@@ -52,6 +52,6 @@ $products = DB::getInstance()->query('SELECT * FROM products;');
         </tfoot>
     </table>
 </div>
-<?php include 'footer.php'; ?>
+<?php include_once 'footer.php'; ?>
 </body>
 </html>

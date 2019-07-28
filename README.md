@@ -4,9 +4,14 @@ This has been written in PHP 7.3 and using MySQL 5.7 as the database.
 
 Using Semantic UI because it's easy to use and looks quite nice. I can also make use of the javascript api when I implement the search bar.
 
+You can either download it to your public_html folder navigate to http://localhost or use PHP's built in webserver
+`php -S localhost:8000` and navigate to http://localhost:8000.
+
 Add your database credentials to the array in `core/init.php`;
 
 You can either create the schema and import Products and Clients I used in testing from the `orderManagement.sql` file. Or use the queries below to create the schema and tables and start fresh. 
+
+<em>You may need to replace the ' with backticks.</em>
 
 `CREATE SCHEMA 'order_management';`
 
@@ -44,3 +49,20 @@ Products to order table:
   'postage' VARCHAR(45) NOT NULL,
   'despatch_date' DATETIME NOT NULL,
   PRIMARY KEY ('products_to_order_id'));`
+
+The search works but it doesn't do anything useful.
+
+Routes: <br>
+index.php                  => Home page. <br>
+orders.php                 => Orders Page. <br>
+create-order.php           => Create Order Page (simply adds row to orders table). <br>
+delete-order.php?id=?      => Delete the order associated with the ID passed in the URL. <br>
+products.php               => Displays all products (pagination needs adding). <br>
+create-product.php         => Creates product. <br>
+delete-product.php?id=?    => Deletes the product associated with the ID passed in the URL. <br>
+clients.php                => List of all available Clients. <br>
+create-client.php          => Create a client. <br>
+view-client.php?id=?       => Displays information for client associated with the ID passed in the URL. <br>
+view-order.php?id=?        => Displays all orders for the Client with the ID passed from the URL. <br>
+products-to-order.php?id=? => Adds record to products_to_order table for the client's id passed through the URL (doesn't work correctly yet. <br>
+update-order.php?id=?      => Updates the order associated with the id passed through the URL (not working yet). <br>
