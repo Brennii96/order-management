@@ -10,10 +10,10 @@ $clients = DB::getInstance()->query("SELECT * FROM clients;");
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Clients | Order Management</title>
-    <?php include 'icons.php'; ?>
+    <?php include_once 'icons.php'; ?>
 </head>
 <body>
-<?php include 'header.php'; ?>
+<?php include_once 'header.php'; ?>
 <div class="ui container">
     <h1>Clients</h1>
     <?php
@@ -47,7 +47,7 @@ $clients = DB::getInstance()->query("SELECT * FROM clients;");
                         <td>" . $client->first_name . "</td>
                         <td>" . $client->last_name . "</td>
                         <td class='center aligned'>
-                        <a href='delete-client.php?id=".$client->clients_id."'>
+                        <a class='hide' href='delete-client.php?id=".$client->clients_id."'>
                         <button class=\"ui icon negative button\">
                             <i class=\"trash icon\"></i>
                         </button></a>
