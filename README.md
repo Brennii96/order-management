@@ -47,16 +47,16 @@ Products to order table:
 
 
 Routes: 
-index.php                  => Home page,<br>
-orders.php                 => Orders Page
-create-order.php           => Create Order Page (simply adds row to orders table)
-delete-order.php?id=?      => Delete the order associated with the ID passed in the URL
-products.php               => Displays all products (pagination needs adding)
-create-product.php         => Creates product
-delete-product.php?id=?    => Deletes the product associated with the ID passed in the URL.
-clients.php                => List of all available Clients.
-create-client.php          => Create a client
-view-client.php?id=?       => Displays information for client associated with the ID passed in the URL.
-view-order.php?id=?        => Displays all orders for the Client with the ID passed from the URL.
-products-to-order.php?id=? => Adds record to products_to_order table for the client's id passed through the URL (doesn't work correctly yet.
-update-order.php?id=?      => Updates the order associated with the id passed through the URL (not working yet).
+index.php                  => Home page. <br>
+orders.php                 => Orders Page. <br>
+create-order.php           => Create Order Page (simply adds row to orders table). <br>
+delete-order.php?id=?      => Delete the order associated with the ID passed in the URL. <br>
+products.php               => Displays all products (pagination needs adding). <br>
+create-product.php         => Creates product. <br>
+delete-product.php?id=?    => Deletes the product associated with the ID passed in the URL. <br>
+clients.php                => List of all available Clients. <br>
+create-client.php          => Create a client. <br>
+view-client.php?id=?       => Displays information for client associated with the ID passed in the URL. <br>
+view-order.php?id=?        => Displays all orders for the Client with the ID passed from the URL. <br>
+products-to-order.php?id=? => Adds record to products_to_order table for the client's id passed through the URL (doesn't work correctly yet. <br>
+update-order.php?id=?      => Updates the order associated with the id passed through the URL (not working yet). <br>
