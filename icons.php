@@ -7,4 +7,4 @@
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
-    <style>.ui.menu.spacing-bottom {margin-bottom:1.875em;}</style>
+    <style>.ui.menu.spacing-bottom {margin-bottom:1.875em;}.hide{display:none;}</style>
