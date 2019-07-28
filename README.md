@@ -11,6 +11,8 @@ Add your database credentials to the array in `core/init.php`;
 
 You can either create the schema and import Products and Clients I used in testing from the `orderManagement.sql` file. Or use the queries below to create the schema and tables and start fresh. 
 
+<em>You may need to replace the ' with backticks.</em>
+
 `CREATE SCHEMA 'order_management';`
 
 Clients Table:
