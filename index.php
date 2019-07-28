@@ -37,7 +37,7 @@ require_once 'core/init.php';
             </a>
 
         </div>
-        <?php $needsDespatching = DB::getInstance()->query("SELECT * FROM `products_to_order` CROSS JOIN `orders` WHERE `status` = 'Awaiting Despatch';")->results(); ?>
+        <?php $needsDespatching = DB::getInstance()->query("SELECT DISTINCT products_to_order.orders_id, status, payment_method, description, clients_id FROM `products_to_order` CROSS JOIN `orders` WHERE `status` = 'Awaiting Despatch';")->results(); ?>
         <?php if ($needsDespatching) { ?>
             <h2>Products Needs Despatching</h2>
         <table class="ui large table">
