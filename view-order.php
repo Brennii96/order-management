@@ -41,8 +41,8 @@ require_once 'core/init.php';
                         <td>" . $order->payment_method . "</td>
                         <td>" . $order->status . "</td>
                         <td>" . DB::getInstance()->get('products', array('products_id', '=', $order->products_id))->results()[0]->product_name . "</td>
-                        <td>" . $order->price . "</td>
-                        <td>" . $order->postage . "</td>
+                        <td class='prices'>" . $order->price . "</td>
+                        <td class='postage'>" . $order->postage . "</td>
                         <td>" . $despatchDate->format('d F Y, h:i A')  . "</td>
                         <td>" . $dateTime->format('d F Y, h:i A') . "</td>
                         <td>
@@ -70,7 +70,7 @@ require_once 'core/init.php';
             <th></th>
             <th></th>
             <th></th>
-            <th></th>
+            <th>Total: <div id="totals"></div></th>
             <th>
                 <a href="create-client.php">
                     <button class="ui button right-aligned">Create Client</button>
@@ -81,5 +81,23 @@ require_once 'core/init.php';
     </table>
     <?php } ?>
 </div>
+<?php include_once 'footer.php'; ?>
+<script>
+    var result = [];
+    $('table tr').each(function(){
+        $('.prices', this).each(function(index, val){
+            if(!result[index]) result[index] = 0;
+            result[index] += parseInt($(val).text());
+        });
+        $('.postage', this).each(function(index, val){
+            if(!result[index]) result[index] = 0;
+            result[index] += parseInt($(val).text());
+        });
+    });
+
+    $(result).each(function(){
+        $('#totals').text(parseInt(this).toFixed(2));
+    });
+</script>
 </body>
 </html>
