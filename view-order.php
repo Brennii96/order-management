@@ -28,6 +28,7 @@ require_once 'core/init.php';
             <th>Postage</th>
             <th>Despatch Date</th>
             <th>Order Date</th>
+            <th>Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -39,7 +40,7 @@ require_once 'core/init.php';
                         <td>" . $order->orders_id . "</td>
                         <td>" . $order->payment_method . "</td>
                         <td>" . $order->status . "</td>
-                        <td>" . $order->products_id . "</td>
+                        <td>" . DB::getInstance()->get('products', array('products_id', '=', $order->products_id))->results()[0]->product_name . "</td>
                         <td>" . $order->price . "</td>
                         <td>" . $order->postage . "</td>
                         <td>" . $despatchDate->format('d F Y, h:i A')  . "</td>

@@ -21,6 +21,23 @@ class Orders
         }
     }
 
+    /**
+     * @param null $order
+     * @return bool
+     */
+    public function find($orders = null)
+    {
+        if ($orders) {
+            $field = (is_numeric($orders)) ? 'orders_id' : '';
+            $data = $this->_db->get('orders', array($field, '=', $orders));
+            if ($data->count()) {
+                $this->_data = $data->first();
+                return $data;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * @param array $fields

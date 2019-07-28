@@ -23,7 +23,7 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
             <th>Payment Method</th>
             <th>Date / Time</th>
             <th>Descriptions</th>
-            <th>Actions</th>
+            <th class="center aligned">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -35,7 +35,7 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
                         <td>" . $order->payment_method. "</td>
                         <td>" . $date->format('d F Y, h:i:s A') . "</td>
                         <td>" . $order->description. "</td>
-                        <td>
+                        <td class='center aligned'>
                         <a href='delete-order.php?id=".$order->orders_id."'>
                         <button class=\"ui icon negative button\">
                             <i class=\"trash icon\"></i>
@@ -50,7 +50,7 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
             <th></th>
             <th></th>
             <th></th>
-            <th>
+            <th class="center aligned">
                 <a href="create-order.php">
                     <button class="ui button right-aligned">Create Order</button>
                 </a>

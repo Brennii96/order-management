@@ -21,7 +21,7 @@ $products = DB::getInstance()->query('SELECT * FROM products;');
         <tr>
             <th>Product Name</th>
             <th>Product Description</th>
-            <th>Actions</th>
+            <th class="center aligned">Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@ $products = DB::getInstance()->query('SELECT * FROM products;');
             echo "<tr>
                         <td>" . $product->product_name . "</td>
                         <td>" . $product->description . "</td>
-                        <td>
+                        <td class='center aligned'>
                         <a href='delete-product.php?id=".$product->products_id."'>
                         <button class=\"ui icon negative button\">
                             <i class=\"trash icon\"></i>
@@ -43,7 +43,7 @@ $products = DB::getInstance()->query('SELECT * FROM products;');
         <tr>
             <th><?php echo $products->count(); ?> Products</th>
             <th></th>
-            <th>
+            <th class="center aligned">
                 <a href="create-product.php">
                     <button class="ui button right-aligned">Create Product</button>
                 </a>

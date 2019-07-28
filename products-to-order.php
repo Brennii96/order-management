@@ -45,7 +45,7 @@ if (Input::exists()) {
                 $productsToOrder->create(array(
                     'orders_id' => Input::get('orders_id'),
                     'clients_id' => Input::get('client'),
-                    'orders_id' => 2,
+//                    'orders_id' => 2,
                     'products_id' => Input::get('products'),
                     'price' => Input::get('price'),
                     'postage' => Input::get('postage'),
