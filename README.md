@@ -46,7 +46,7 @@ Products to order table:
   PRIMARY KEY ('products_to_order_id'));`
 
 
-Routes: 
+Routes: <br>
 index.php                  => Home page. <br>
 orders.php                 => Orders Page. <br>
 create-order.php           => Create Order Page (simply adds row to orders table). <br>
