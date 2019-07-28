@@ -50,6 +50,7 @@ Products to order table:
   'despatch_date' DATETIME NOT NULL,
   PRIMARY KEY ('products_to_order_id'));`
 
+The search works but it doesn't do anything useful.
 
 Routes: <br>
 index.php                  => Home page. <br>
