@@ -16,7 +16,7 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
 <?php include_once 'header.php'; ?>
 <div class="ui container">
     <h1>Orders</h1>
-    <table class="ui large table">
+    <table class="ui large table" id="orders">
         <thead>
         <tr>
             <th>Order Status</th>
@@ -59,5 +59,11 @@ $orders = DB::getInstance()->query("SELECT * FROM orders;");
         </tfoot>
     </table>
 </div>
+<?php include_once 'footer.php'; ?>
+<script>
+    $('#orders tr > td:contains(Payment Declined)').addClass('error');
+    $('#orders tr > td:contains(Awaiting Despatch)').addClass('warning');
+    $('#orders tr > td:contains(Delivered)').addClass('positive');
+</script>
 </body>
 </html>
