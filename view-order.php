@@ -96,7 +96,7 @@ require_once 'core/init.php';
     });
 
     $(result).each(function(){
-        $('#totals').text(parseInt(this).toFixed(2));
+        $('#totals').html(parseInt(this).toFixed(2));
     });
 </script>
 </body>

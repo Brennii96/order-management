@@ -30,7 +30,7 @@ CREATE TABLE `clients` (
   `first_name` varchar(50) NOT NULL,
   `last_name` varchar(50) NOT NULL,
   PRIMARY KEY (`clients_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `clients` (
 
 LOCK TABLES `clients` WRITE;
 /*!40000 ALTER TABLE `clients` DISABLE KEYS */;
-INSERT INTO `clients` VALUES (4,'Amazon','Jeff ','Bezos'),(5,'Ebay','Pierre','Omidyar'),(6,'Google','Larry ','Page'),(7,'Facebook','Mark','Zuckerberg'),(8,'Linux','Linus ','Torvalds'),(9,'Littlewoods','John','Moores');
+INSERT INTO `clients` VALUES (1,'Amazon','Jeff ','Bezos'),(2,'Ebay','Pierre','Omidyar'),(3,'Google','Larry ','Page'),(4,'Facebook','Mark','Zuckerberg'),(5,'Linux','Linus ','Torvalds'),(6,'Littlewoods','John','Moores');
 /*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,7 +57,7 @@ CREATE TABLE `orders` (
   `date_time` datetime NOT NULL,
   `description` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`orders_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,6 +66,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (1,'Awaiting Despatch','Visa','2019-07-28 13:20:00','Payment made for 2 products awaiting courier to collect.'),(2,'Payment Declined','PayPal','2019-07-28 14:38:00','Payment has been Declined by Card Issuer'),(3,'Delivered','Visa','2019-07-28 14:50:00','Payment has been successfully signed for and delivered.'),(4,'In Transit','Visa','2019-07-28 14:45:00','En route to client.');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +82,7 @@ CREATE TABLE `products` (
   `product_name` varchar(100) NOT NULL,
   `description` varchar(250) NOT NULL,
   PRIMARY KEY (`products_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -90,7 +91,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (7,'Philosophers Stone','Harry Potter 1 '),(8,'Chamber of Secrets','Harry Potter 2'),(9,'Prisoner of Azkaban','Harry Potter 3'),(10,'Goblet of Fire','Harry Potter 4'),(11,'Order of the Phoenix','Harry Potter 5'),(12,'Half-blood Prince ','Harry Potter 6'),(14,'Deathly Hallows','Harry Potter 7');
+INSERT INTO `products` VALUES (1,'Philosophers Stone','Harry Potter 1 '),(2,'Chamber of Secrets','Harry Potter 2'),(3,'Prisoner of Azkaban','Harry Potter 3'),(4,'Goblet of Fire','Harry Potter 4'),(5,'Order of the Phoenix','Harry Potter 5'),(6,'Half-blood Prince ','Harry Potter 6'),(7,'Deathly Hallows','Harry Potter 7');
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +111,7 @@ CREATE TABLE `products_to_order` (
   `postage` varchar(45) NOT NULL,
   `despatch_date` datetime NOT NULL,
   PRIMARY KEY (`products_to_order_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,6 +120,7 @@ CREATE TABLE `products_to_order` (
 
 LOCK TABLES `products_to_order` WRITE;
 /*!40000 ALTER TABLE `products_to_order` DISABLE KEYS */;
+INSERT INTO `products_to_order` VALUES (1,1,'2',1,'10.00','0.00','2019-08-01 12:00:00'),(2,1,'2',2,'10.00','2.50','2019-08-01 12:00:00'),(3,4,'4',4,'20.00','0.00','2019-07-29 13:00:00');
 /*!40000 ALTER TABLE `products_to_order` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -131,4 +133,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-27 22:42:10
+-- Dump completed on 2019-07-28 22:51:31
