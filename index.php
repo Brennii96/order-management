@@ -13,10 +13,15 @@ require_once 'core/init.php';
 <body>
     <?php include_once 'header.php'; ?>
     <div class="ui container">
-        <?php if (Session::has('success')) {
-            //Didn't have time to make this look nice.
-            echo "<script>window.alert('Order updated')";
-            }?>
+        <?php if (Session::has('success')) { ?>
+            <div class="ui success message">
+                <i class="close icon"></i>
+                <div class="header">
+                    Success
+                </div>
+                <p><?php echo Session::get('success'); ?></p>
+            </div>
+        <?php } ?>
         <div class="ui column">
             <a href="products.php">
                 <div class="ui circular segment">
