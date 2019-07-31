@@ -2,7 +2,7 @@
 
 This has been written in PHP 7.3 and using MySQL 5.7 as the database.
 
-Using Semantic UI because it's easy to use and looks quite nice. I can also make use of the javascript api when I implement the search bar.
+Using [Semantic UI](https://semantic-ui.com/) because it's easy to use and looks quite nice. I can also make use of the javascript api when I implement the search bar.
 
 You can either download it to your public_html folder navigate to http://localhost or use PHP's built in webserver
 `php -S localhost:8000` and navigate to http://localhost:8000.
