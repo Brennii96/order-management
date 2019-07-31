@@ -2,7 +2,7 @@
 
 class Files
 {
-    public $src = './uploads';
+    public $src = './uploads/';
     public $tmp;
     public $type;
     public $fileName;
@@ -16,14 +16,14 @@ class Files
     {
         $this->fileName = $file_name;
         $this->tmp = $tmp_name;
+        // TODO add id to change where the upload goes e.g... /uploads/products/{id}/image.png
         $this->uploadFile = $this->src . basename($file_name);
+        move_uploaded_file($this->tmp, $this->uploadFile);
     }
 
-    public function uploadFile()
+    private function optimize($fileName)
     {
-        if (move_uploaded_file($this->tmp, $this->uploadFile)) {
-            return true;
-        }
-        return false;
+        //TODO add an optimizer to reduce space used on server either ImageMagick or paid web service for more support
     }
+
 }

@@ -32,8 +32,6 @@ class Input
         } else if (isset($_GET[$item])) {
             return $_GET[$item];
         } else if (isset($_FILES[$item])) {
-            $files = new Files();
-            $files->upload($_FILES[$item]['name'], $_FILES[$item]['tmp_name']);
             return $_FILES[$item];
         }
         return '';
